@@ -12,6 +12,7 @@ const Login = ({setUsuarioLogueado}) => {
       formState: { errors },
       reset
     } = useForm();
+    //useNavigate = es para redireccionar la pagina a administrador
     const navegacion = useNavigate();
   
     

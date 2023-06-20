@@ -1,27 +1,41 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { Link, NavLink } from "react-router-dom";
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import { Link, NavLink, useNavigate} from 'react-router-dom';
 
-const Menu = () => {
+
+const Menu = ({usuarioLogueado,setUsuarioLogueado}) => {
+  const navegacion = useNavigate();
+
+const logout = ()=>{
+  //borrar del sessionStorage
+  sessionStorage.removeItem('usuario');
+  setUsuarioLogueado({});
+  navegacion('/');
+}
+
+
   return (
     <div>
-      <Navbar className="bgMenu text-bg-white" expand="lg">
-        <Container>
-          <Navbar.Brand  as={Link} to={'/'}>Recetas de la Abuela</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto nav-item nav-link">
-              <Nav.Link  as={Link} to={'/'} end>Inicio</Nav.Link>
-              <Nav.Link  as={Link} to={'/registro'}end >Registro</Nav.Link>
-              <Nav.Link as={Link} to={'/administrador'} end>Administrador</Nav.Link>
-              <Nav.Link  as={Link} to={'/login'} end>Login</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+        <Navbar bg="danger" variant="dark" expand="lg">
+      <Container>
+        <Navbar.Brand as={Link} to={'/'}>Cafecito</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <NavLink end className='nav-item nav-link' to={'/'}>Inicio</NavLink>
+            <NavLink end className='nav-item nav-link' to={'/registro'}>Registro</NavLink>
+            {
+              usuarioLogueado.email ?(
+                <>
+                <NavLink end className='nav-item nav-link' to={'/administrador'}>Administrador</NavLink>
+                <Button variant="dark" onClick={logout}>Logout</Button>
+                </>
+              ):
+              <NavLink end className='nav-item nav-link' to={'/login'}>Login</NavLink>
+            }
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     </div>
   );
 };
