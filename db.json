@@ -1,8 +1,9 @@
 {
     "productos": [
-        {"id":1,"nombreProducto":"pulpo","Imagen":"","cantidadPlatos":3,"ingredientes":"3 tentaculos","procesoDePreparacion":"cortar los tentaculo"},
-        {"id":2,"nombreProducto":"tentaculosPulpo","Imagen":"","cantidadPlatos":3,"ingredientes":"3 tentaculos","procesoDePreparacion":"cortar los tentaculo"},
-        {"id":3,"nombreProducto":"pulpoEmpalado","Imagen":"","cantidadPlatos":3,"ingredientes":"3 tentaculos","procesoDePreparacion":"cortar los tentaculo"}
+        {"id":1,"nombreProducto":"pulpo","Imagen":"https://cdn7.kiwilimon.com/ss_secreto/4727/320x320/4727.jpg.webp","cantidadPlatos":3,"ingredientes":"3 tentaculos","procesoDePreparacion":"cortar los tentaculo"},
+        {"id":2,"nombreProducto":"tentaculosPulpo","Imagen":"https://cdn7.kiwilimon.com/articuloimagen/31839/320x320/31609.jpg.webp","cantidadPlatos":3,"ingredientes":"3 tentaculos","procesoDePreparacion":"cortar los tentaculo"},
+        {"id":3,"nombreProducto":"pulpoEmpalado","Imagen":"https://cdn7.kiwilimon.com/articuloimagen/31845/320x320/31620.jpg.webp","cantidadPlatos":3,"ingredientes":"3 tentaculos","procesoDePreparacion":"cortar los tentaculo"},
+        {"id":4,"nombreProducto":"pulpoEmpalado","Imagen":"https://cdn7.kiwilimon.com/articuloimagen/31845/320x320/31620.jpg.webp","cantidadPlatos":3,"ingredientes":"3 tentaculos","procesoDePreparacion":"cortar los tentaculo"}
     ],
     "usario":[
         {

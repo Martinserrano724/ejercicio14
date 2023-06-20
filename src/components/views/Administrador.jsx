@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import ItemProducto from "./producto/ItemProducto";
+import { useEffect , } from "react";
+import { obtenerProductos } from "../helpers/queries";
 const Administrador = () => {
+
+  
+  const [producto ,setProductos] = useState([])
+  useEffect(()=>{
+    obtenerProductos().then((respuesta)=>{
+      console.log(respuesta)
+      setProductos(respuesta);
+      // todo: resolver la situacion cuando no puedo realizar la conexion a la API
+    })
+  },[])
   return (
-   
+ 
     <section className="container mainSection">
     <div className="d-flex justify-content-between align-items-center mt-5">
       <h1 className="display-4 ">Productos disponibles</h1>
@@ -24,8 +36,10 @@ const Administrador = () => {
             <th>Opciones</th>
           </tr>
       </thead>
-      <tbody>
-       <ItemProducto></ItemProducto>
+      <tbody>{
+        producto.map((prod )=> <ItemProducto key={prod.id} producto={prod}></ItemProducto>)
+        }
+      
       </tbody>
     </Table>
   </section>

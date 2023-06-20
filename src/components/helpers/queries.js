@@ -1,5 +1,8 @@
+import { Await } from "react-router-dom";
+
 // para el login vamos a hacer una peticion get ya que usaremos json server
 const URL_USUARIO = import.meta.env.VITE_API_USUARIO;
+const URL_PRODUCTO = import.meta.env.VITE_API_PRODUCTO;
 
 export const login = async (usuario)=>{
     console.log(usuario);
@@ -27,5 +30,14 @@ export const login = async (usuario)=>{
     }catch (error){
         console.log(error);
         return null;
+    }
+}
+export  const  obtenerProductos = async ()=>{
+    try {
+        const respuesta=await fetch(URL_PRODUCTO);
+        const listaProducto = await respuesta.json();
+        return listaProducto;
+    } catch (error) {
+        console.log(error);
     }
 }
