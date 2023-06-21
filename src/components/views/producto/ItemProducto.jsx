@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { eliminarProductoSeccionStorage, obtenerProductos } from '../../helpers/queries';
-const ItemProducto = ({producto,setProducto}) => {
+const ItemProducto = ({producto,setProductos}) => {
 
   const borrarProducto = (producto)=>{
     const swalWithBootstrapButtons = Swal.mixin({
@@ -34,9 +34,7 @@ const ItemProducto = ({producto,setProducto}) => {
            'success'
          );
          //se actualiza el state para recargar los productos
-         obtenerProductos().then((result)=>{
-          return setProducto(result)
-         })
+         obtenerProductos().then((result)=>setProductos(result))
 
         }
         else{
