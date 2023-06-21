@@ -7,7 +7,13 @@ const RutasProtegidas = ({children}) => {
     //lugar donde ira por no estar logueado
     return <Navigate to={'/login'}></Navigate>
   }else{
-    return children;
+
+    if(usuarioLogueado.tipo=='admin'){
+      return children;
+    }else{
+      return <Navigate to={'/error404'}></Navigate>
+    }
+   
   }
 };
 

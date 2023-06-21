@@ -16,21 +16,28 @@ import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
 
 function App() {
+
+
   const usuarioSesionStorage =
     JSON.parse(sessionStorage.getItem("usuario")) || {};
+  const productoSesionStorage =
+    JSON.parse(sessionStorage.getItem("producto")) || {};
+
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuarioSesionStorage);
+  const [producto, setProducto] = useState(productoSesionStorage);
 
   return (
     <>
       <BrowserRouter>
       <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
-      <Routes>
-        <Route exact path="/" element={<Inicio></Inicio>}></Route>
+      <Routes className="mainContenedor">
+        <Route exact path="/" element={<Inicio producto={producto}></Inicio>}></Route>
+        <Route exact path="/detalle/:id" element={<DettalleProducto receta={producto}></DettalleProducto>}></Route>
         <Route exact path="/registro" element={<Registro></Registro>}></Route>
         <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} ></Login>}></Route>
         <Route path="/administrador/*" element={
           <RutasProtegidas>
-            <RutasAdministrador></RutasAdministrador>
+            <RutasAdministrador ></RutasAdministrador>
           </RutasProtegidas>
         }></Route>
        

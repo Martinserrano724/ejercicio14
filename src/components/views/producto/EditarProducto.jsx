@@ -20,8 +20,8 @@ const {
 
 const navegacion = useNavigate();
 useEffect(() => {
+ 
   obtenerProductosEditar(id).then((respuesta) => {
-    console.log(respuesta)
     setValue('nombreProducto',respuesta.nombreProducto);
     setValue('imagen',respuesta.imagen);
     setValue('ingredientes',respuesta.ingredientes);
@@ -51,7 +51,7 @@ const onSubmit=(productoEditado)=>{
 }
 
     return (
-        <div className="container ">
+        <div className="container mainContenedor">
         <h1 className="text-center">Editar Producto</h1>
         <hr />
       <Form className="bgForm m-3 p-3" onSubmit={handleSubmit(onSubmit)}>
@@ -83,7 +83,10 @@ const onSubmit=(productoEditado)=>{
             type="text"
             placeholder="ingrese la imagen de la receta"
             {...register("imagen", {
-              required: "La imagen es obligatoria",
+              required: "La imagen es obligatoria",pattern:{
+                value: /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|webp)$/,
+                message: 'la imagen debe ser un link y terminar jpg o gif o png o webp'
+              }
             })}
           />
           <Form.Text className="text-danger">
@@ -117,7 +120,7 @@ const onSubmit=(productoEditado)=>{
           <Form.Label>Ingredientes</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ingrese los ingredientes"
+            placeholder="ingrese separado por un - los ingredientes"
             as="textarea"
             rows={3}
             {...register("ingredientes", {
@@ -132,6 +135,7 @@ const onSubmit=(productoEditado)=>{
                 message:
                   "los ingredientes de la Receta es maximo es de 10000 caracteres",
               },
+             
             })}
           />
           <Form.Text className="text-danger">
