@@ -1,36 +1,28 @@
 {
   "productos": [
     {
-      "nombreProducto": "sdaaqaaaaaaa",
-      "imagen": "https://cdn7.kiwilimon.com/ss_secreto/4727/640x426/4727.jpg.webp",
-      "cantidadPlatos": "12",
-      "ingredientes": "sdaaaaaaaaaaa",
-      "procesoDePreparacion": "sdasdasdasdasdasdasdasdasdasdasdasdasda",
+      "nombreProducto": "Pulpo a la plancha",
+      "imagen": "https://i.blogs.es/f0476b/pulpo-a-la-plancha-pakus-futurobloguero/1366_2000.jpg",
+      "cantidadPlatos": "3",
+      "ingredientes": "Pulpo cocido 3 tentáculos o patas-Puré de patatas al gusto-Dientes de ajo para la ajada 2-Pimentón dulce para la ajada-Aceite de oliva virgen extra para la ajada, 4 cucharadas soperas-Sal en escamas para servir",
+      "procesoDePreparacion": "cortamos sus tentáculos ,Ponemos una parrilla al fuego y dejamos que se caliente bien durante tres o cuatro minutos. Espolvoreamos con aceite de oliva virgen extra con ayuda de un spray o con una brocha de silicona. Ponemos los trozos de pulpo encima y dejamos que se cocinen a fuego vivo",
       "id": 7
     },
     {
-      "nombreProducto": "1234",
-      "imagen": "https://cdn7.kiwilimon.com/productoventa/124/320x420/124.jpg.webp",
-      "cantidadPlatos": "12",
-      "ingredientes": "sadddddddddd",
-      "procesoDePreparacion": "dasasasasasasasasasasas",
+      "nombreProducto": "Cookies con pepitas de chocolate y nueces",
+      "imagen": "https://i.blogs.es/d22639/cookies-levain-bakery/1366_2000.jpg",
+      "cantidadPlatos": "10",
+      "ingredientes": "Harina de trigo 275 g-Harina de repostería 230 g-Maicena 10 g-Sal 4 g-Bicarbonato sódico 5 g-Baking Powder Royal 6 g-Mantequilla 275 g-Azúcar moreno 275 g-Azúcar 115 g-Huevo L 2-Yema de huevo L 3-Nueces 150 g-Chips de chocolate negro 400 g",
+      "procesoDePreparacion": "Comenzaremos picando el chocolate en trocitos,En un bol, añadimos la harina de trigo, la harina de repostería, la sal, la maicena, el Baking Powder Royal y el bicarbonato. Mezclamos todo y reservamos.En otro bol o el vaso de un robot, añadimos el azúcar moreno, el azúcar blanco y la mantequilla blanda a temperatura ambiente. Incorporamos todos los ingredientes con unas varillas o el accesorio pala del robot",
       "id": 8
     },
     {
-      "nombreProducto": "12345",
-      "imagen": "https://cdn7.kiwilimon.com/productoventa/126/320x420/126.jpg.webp",
+      "nombreProducto": "Cupcakes de café con cobertura de crema de whisky",
+      "imagen": "https://i.blogs.es/dfa753/cupcake-cafe-2/1366_2000.jpg",
       "cantidadPlatos": "12",
-      "ingredientes": "sadddddddsa",
-      "procesoDePreparacion": "asdasdasdasdasdasd",
+      "ingredientes": "Nata líquida para montar A (Para la cobertura) 150 g -Chocolate blanco para postres (Para la cobertura) 100 g -Nata líquida para montar B (Para la cobertura) 215 g -Crema de whisky (Para la cobertura) 20 g -Mantequilla (Para la masa) 115 g -Azúcar (Para la masa) 200 g -Huevo L (Para la masa) 2 -Harina de trigo (Para la masa) 90 g -Baking Powder Royal ,cucharadita de café (Para la masa) 1 -Cacao en polvo (Para la masa) 50 g -Leche (Para la masa) 120 ml -Esencia de vainilla ,cucharadita de café (Para la masa) ",
+      "procesoDePreparacion": "Comenzaremos preparando la ganache para la cobertura. Para ello, ponemos en una olla al fuego la nata A y le añadimos la esencia de vainilla. LLevamos esto a ebullición.Mientras en un bol derretimos el chocolate blanco al microondas en golpes de tiempo de unos 15 segundos, removiendo cada poco.Poco a poco añadimos en tres veces la nata caliente sobre la cobertura de chocolate blanco fundido y removemos para hacer una emulsión. Batimos con la batidora sin incorporar aire para hacer la mezcla homogénea.",
       "id": 9
-    },
-    {
-      "nombreProducto": "1111",
-      "imagen": "sdaaaaa",
-      "cantidadPlatos": "12",
-      "ingredientes": "sdaaaaaaaaaaa",
-      "procesoDePreparacion": "sdasdasdasdasdasdasdasdasdasdasdasdasda",
-      "id": 10
     }
   ],
   "usario": [
