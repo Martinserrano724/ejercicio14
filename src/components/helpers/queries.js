@@ -1,4 +1,4 @@
-import { Await } from "react-router-dom";
+import { Await, json } from "react-router-dom";
 
 // para el login vamos a hacer una peticion get ya que usaremos json server
 const URL_USUARIO = import.meta.env.VITE_API_USUARIO;
@@ -53,5 +53,32 @@ export const eliminarProductoSeccionStorage =async(id)=>{
     } catch (error) {
         console.log(error);
         return null;
+    }
+}
+export const cosultarCrearProducto =async(producto)=>{
+    try {
+        //para borrar debemos crear una peticion con un id para borrar 
+        const respuesta=await fetch(URL_PRODUCTO, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(producto)
+        });
+        return respuesta;
+       
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+}
+export  const  obtenerProductosEditar = async (id)=>{
+    try {
+        const respuesta = await fetch(`${URL_PRODUCTO}/${id}`);
+        const productoEditar = await respuesta.json();
+        return productoEditar;
+    } catch (error) {
+        console.log(error);
+        
     }
 }

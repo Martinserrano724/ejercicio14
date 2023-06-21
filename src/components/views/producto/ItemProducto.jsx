@@ -66,7 +66,7 @@ const ItemProducto = ({producto,setProductos}) => {
       <td>{producto.cantidadPlatos}</td>
       <td>
         <img
-          src={producto.Imagen}
+          src={producto.imagen}
           alt=""
           className="imgAdministrador"
         />
@@ -77,7 +77,7 @@ const ItemProducto = ({producto,setProductos}) => {
       <td>
         <div>
           {" "}
-          <Link className="ms-auto btnAgregar btn btn-warning" to='/administrador/editar'>
+          <Link className="ms-auto btnAgregar btn btn-warning" to={`/administrador/editar/${producto.id}`}>
             Editar
           </Link>
         </div>

@@ -1,28 +1,44 @@
 {
   "productos": [
     {
-      "id": 1,
-      "nombreProducto": "pulpo",
-      "Imagen": "",
-      "cantidadPlatos": 3,
-      "ingredientes": "3 tentaculos",
-      "procesoDePreparacion": "cortar los tentaculo"
+      "nombreProducto": "sda",
+      "imagen": "sdaaaaa",
+      "cantidadPlatos": "12",
+      "ingredientes": "sdaaaaaaaaaaa",
+      "procesoDePreparacion": "sdasdasdasdasdasdasdasdasdasdasdasdasda",
+      "id": 5
     },
     {
-      "id": 2,
-      "nombreProducto": "tentaculos de pulpo",
-      "Imagen": "",
-      "cantidadPlatos": 3,
-      "ingredientes": "3 tentaculos",
-      "procesoDePreparacion": "cortar los tentaculo"
+      "nombreProducto": "sda",
+      "imagen": "sdaaaaa",
+      "cantidadPlatos": "12",
+      "ingredientes": "sdaaaaaaaaaaa",
+      "procesoDePreparacion": "sdasdasdasdasdasdasdasdasdasdasdasdasda",
+      "id": 6
     },
     {
-      "id": 3,
-      "nombreProducto": "tiras pulpo",
-      "Imagen": "",
-      "cantidadPlatos": 3,
-      "ingredientes": "3 tentaculos",
-      "procesoDePreparacion": "cortar los tentaculo"
+      "nombreProducto": "sda",
+      "imagen": "sdaaaaa",
+      "cantidadPlatos": "12",
+      "ingredientes": "sdaaaaaaaaaaa",
+      "procesoDePreparacion": "sdasdasdasdasdasdasdasdasdasdasdasdasda",
+      "id": 7
+    },
+    {
+      "nombreProducto": "1234",
+      "imagen": "https://cdn7.kiwilimon.com/productoventa/124/320x420/124.jpg.webp",
+      "cantidadPlatos": "12",
+      "ingredientes": "sadddddddddd",
+      "procesoDePreparacion": "dasasasasasasasasasasas",
+      "id": 8
+    },
+    {
+      "nombreProducto": "12345",
+      "imagen": "https://cdn7.kiwilimon.com/productoventa/126/320x420/126.jpg.webp",
+      "cantidadPlatos": "12",
+      "ingredientes": "sadddddddsa",
+      "procesoDePreparacion": "asdasdasdasdasdasd",
+      "id": 9
     }
   ],
   "usario": [
