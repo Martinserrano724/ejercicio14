@@ -33,7 +33,7 @@ const [platos ,setPlatos]=useState('');
         <img
           src={imagen}
           alt=""
-          className="h-100 "
+          className="w-50 "
         />
       </div>
       
