@@ -20,8 +20,8 @@ const {
 
 const navegacion = useNavigate();
 useEffect(() => {
+ 
   obtenerProductosEditar(id).then((respuesta) => {
-    console.log(respuesta)
     setValue('nombreProducto',respuesta.nombreProducto);
     setValue('imagen',respuesta.imagen);
     setValue('ingredientes',respuesta.ingredientes);
@@ -51,7 +51,7 @@ const onSubmit=(productoEditado)=>{
 }
 
     return (
-        <div className="container ">
+        <div className="container mainContenedor">
         <h1 className="text-center">Editar Producto</h1>
         <hr />
       <Form className="bgForm m-3 p-3" onSubmit={handleSubmit(onSubmit)}>

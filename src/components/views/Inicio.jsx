@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import CardProducto from "./producto/CardProducto";
-
+import { useEffect } from "react";
+import { obtenerProductos } from "../helpers/queries";
+import CardProducto from "./producto/CardProducto"
 const Inicio = () => {
+
+  const [producto ,setProductos] = useState([])
+  useEffect(()=>{
+    obtenerProductos().then((respuesta)=>{
+      console.log(respuesta)
+      if(respuesta){
+        setProductos(respuesta);
+      }else{
+        navegacion('/error404');
+      }
+     
+      // todo: resolver la situacion cuando no puedo realizar la conexion a la API
+      
+    })
+  },[])
+
     return (
-        <div>
+        <div className="mainContenedor">
             <Carousel className=" ">
         <Carousel.Item interval={3000} className="contenedorCarrusel">
           <img
@@ -38,7 +55,12 @@ const Inicio = () => {
         </Carousel.Item>
       </Carousel>
       <h3 className="text-center">Nuestros Productos</h3>
-      <section className="my-5 container d-flex justify-content-around "> <CardProducto></CardProducto></section>
+      <section className="my-5 container d-flex justify-content-around ">
+        {producto.map((index,key)=>{
+          return  <CardProducto receta={index} key={key}></CardProducto>;
+        } )
+      }
+       </section>
         </div>
     );
 };

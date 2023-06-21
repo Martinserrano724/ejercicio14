@@ -82,6 +82,20 @@ export  const  obtenerProductosEditar = async (id)=>{
         
     }
 }
+export  const  obtenerProductosMostrar = async (id)=>{
+    try {
+        console.log(`${URL_PRODUCTO}/${id}`);
+        const respuesta = await fetch(`${URL_PRODUCTO}/${id}`);
+        
+
+        const productoEditar = await respuesta.json();
+        return productoEditar;
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
+
 export const consultaEditarProducto = async(producto ,id)=>{
     try{
         const respuesta = await fetch(URL_PRODUCTO+'/'+id, {

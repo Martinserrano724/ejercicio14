@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 const Error404 = () => {
     return (
-        <div className='text-center mb-5'>
+        <div className='text-center mb-5 mainContenedor'>
             <img src={error404} alt=""  className='h-100'/>
             <div> 
             <Link className="btn btn-primary" to='/'>

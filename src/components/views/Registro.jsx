@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 
 const Registro = () => {
     return (
-        <div className="mt-5 mainSection">
+        <div className="mt-5 mainSection mainContenedor">
         <h3 className="text-center">Registro</h3>
         <div className="row justify-content-center">
           <div className="col-12 col-sm-8 col-md-6 col-xl-4">

@@ -31,7 +31,7 @@ const CrearProducto = () => {
   };
 
   return (
-    <div className="container ">
+    <div className="container mainContenedor ">
       <h1 className="text-center">Nuevo Producto</h1>
       <hr />
       <Form className="bgForm m-3 p-3" onSubmit={handleSubmit(onSubmit)}>
