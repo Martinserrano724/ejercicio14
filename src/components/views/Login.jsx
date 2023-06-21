@@ -34,7 +34,7 @@ const Login = ({setUsuarioLogueado}) => {
   
  login();
     return (
-      <Container className="mainSection">
+      <Container className="mainSection mainContenedor">
         <Card className="my-5">
           <Card.Header as="h5">Login</Card.Header>
           <Card.Body>

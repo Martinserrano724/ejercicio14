@@ -60,7 +60,7 @@ const ItemProducto = ({producto,setProductos}) => {
 
 
     return (
-      <tr>
+      <tr className='mainContenedor'>
       <td>{producto.id}</td>
       <td>{producto.nombreProducto}</td>
       <td>{producto.cantidadPlatos}</td>

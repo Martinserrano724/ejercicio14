@@ -3,31 +3,27 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-const CardProducto = () => {
+import { Link } from "react-router-dom";
+
+const CardProducto = ({ receta }) => {
   return (
-    <div>
-      <Row xs={1} md={2} className="g-4">
-        {Array.from({ length: 6 }).map((_, idx) => (
-          <Col key={idx}>
-            <Card className="d-flex justify-content-between">
-                <div className="d-flex"><Card.Img variant="top" src="https://cdn7.kiwilimon.com/ss_secreto/4727/320x320/4727.jpg.webp" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </Card.Text>
-                <Button variant="primary">Ver mas</Button>
-              </Card.Body></div>
-              
+
+
+        <Card className="  col-md-4 col-lg-5 m-1 p-0 m-0 rounded-4 h-100 contenedorCard">
+          <div className="d-flex">
+            <div className="imgDetalle"><Card.Img variant="top" src={receta.imagen}  /></div>
             
-            </Card>
-            
-          </Col>
-        ))}
-      </Row>
-    </div>
+            <Card.Body>
+              <Card.Title>{receta.nombreProducto}</Card.Title>
+              <Card.Text>{receta.procesoDePreparacion}</Card.Text>
+              <Link className="btn btn-primary" to={`/detalle/${receta.id}`}>
+                Ver mas
+              </Link>
+            </Card.Body>
+          </div>
+        </Card>
+
+
   );
 };
 
