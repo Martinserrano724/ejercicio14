@@ -4,15 +4,24 @@ import Button from "react-bootstrap/Button";
 import ItemProducto from "./producto/ItemProducto";
 import { useEffect , } from "react";
 import { obtenerProductos } from "../helpers/queries";
-const Administrador = () => {
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
+const Administrador = () => {
+  const navegacion = useNavigate();
   
   const [producto ,setProductos] = useState([])
   useEffect(()=>{
     obtenerProductos().then((respuesta)=>{
       console.log(respuesta)
-      setProductos(respuesta);
+      if(respuesta){
+        setProductos(respuesta);
+      }else{
+        navegacion('/error404');
+      }
+     
       // todo: resolver la situacion cuando no puedo realizar la conexion a la API
+      
     })
   },[])
   return (
@@ -37,7 +46,7 @@ const Administrador = () => {
           </tr>
       </thead>
       <tbody>{
-        producto.map((prod )=> <ItemProducto key={prod.id} producto={prod}></ItemProducto>)
+        producto.map((prod )=> <ItemProducto key={prod.id} producto={prod} setProductos={setProductos}></ItemProducto>)
         }
       
       </tbody>

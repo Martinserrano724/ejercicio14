@@ -39,5 +39,19 @@ export  const  obtenerProductos = async ()=>{
         return listaProducto;
     } catch (error) {
         console.log(error);
+        return null;
+    }
+}
+export const eliminarProductoSeccionStorage =async(id)=>{
+    try {
+        //para borrar debemos crear una peticion con un id para borrar 
+        const respuesta=await fetch(`${URL_PRODUCTO}/${id}`, {
+            method: "DELETE"
+        });
+        return respuesta;
+       
+    } catch (error) {
+        console.log(error);
+        return null;
     }
 }
