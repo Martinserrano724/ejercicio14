@@ -51,9 +51,9 @@ const Inicio = () => {
       </Carousel>
       <h3 className="text-center">Nuestros Productos</h3>
       <div className="container-fluid">
-        <section className="my-5 row d-flex justify-content-evenly align-items-center">
+        <section className="my-5 row d-flex justify-content-evenly align-items-center ">
           {producto.map((index, key) => {
-            return <CardProducto receta={index} key={key}></CardProducto>;
+            return <CardProducto receta={index} key={key} ></CardProducto>;
           })}
         </section>
       </div>
