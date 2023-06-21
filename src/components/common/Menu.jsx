@@ -22,15 +22,24 @@ const logout = ()=>{
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <NavLink end className='nav-item nav-link' to={'/'}>Inicio</NavLink>
-            <NavLink end className='nav-item nav-link' to={'/registro'}>Registro</NavLink>
             {
-              usuarioLogueado.email ?(
+             ( usuarioLogueado.tipo=='usuario' ||usuarioLogueado.tipo==undefined )?(
+                <>
+                 
+                 <Button variant="dark" onClick={logout}>Logout</Button>
+                </>
+              ): usuarioLogueado.tipo!='admin'?<NavLink end className='nav-item nav-link' to={'/registro'}>Registro</NavLink>:<></>
+              
+            }
+           
+            {
+              usuarioLogueado.tipo =='admin' ?(
                 <>
                 <NavLink end className='nav-item nav-link' to={'/administrador'}>Administrador</NavLink>
                 <Button variant="dark" onClick={logout}>Logout</Button>
                 </>
               ):
-              <NavLink end className='nav-item nav-link' to={'/login'}>Login</NavLink>
+              usuarioLogueado.tipo!='usuario'||usuarioLogueado.tipo==undefined?<NavLink end className='nav-item nav-link' to={'/login'}>Login</NavLink>:<></>
             }
           </Nav>
         </Navbar.Collapse>

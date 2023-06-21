@@ -12,12 +12,11 @@ const CrearProducto = () => {
     reset,
   } = useForm();
   const onSubmit = (productoNuevo) => {
-    console.log(productoNuevo);
     cosultarCrearProducto(productoNuevo).then((respuesta) => {
       if (respuesta.status == 201) {
         Swal.fire(
           "Receta Creada !",
-          `la Receta ${productoNuevo.nombreProducto}  borrada correctamente.`,
+          `la Receta ${productoNuevo.nombreProducto} correctamente.`,
           "success"
         );
       } else {
@@ -45,11 +44,11 @@ const CrearProducto = () => {
               required: "El nombre del producto es obligatorio",
               minLength: {
                 value: 2,
-                message: "La cantidad minima de caracteres es de 2 digitos",
+                message: "La cantidad minima de caracteres es de 2 ",
               },
               maxLength: {
                 value: 100,
-                message: "La cantidad minima de caracteres es de 2 digitos",
+                message: "La cantidad minima de caracteres es de 2 ",
               },
             })}
           />
@@ -97,7 +96,7 @@ const CrearProducto = () => {
           <Form.Label>Ingredientes</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ingrese los ingredientes"
+            placeholder="ingrese separado por un - los ingredientes"
             as="textarea"
             rows={3}
             {...register("ingredientes", {

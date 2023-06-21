@@ -1,24 +1,8 @@
 {
   "productos": [
     {
-      "nombreProducto": "55",
-      "imagen": "sdaaaaa",
-      "cantidadPlatos": "12",
-      "ingredientes": "sdaaaaaaaaaaa",
-      "procesoDePreparacion": "sdasdasdasdasdasdasdasdasdasdasdasdasda",
-      "id": 5
-    },
-    {
-      "nombreProducto": "sda",
-      "imagen": "sdaaaaa",
-      "cantidadPlatos": "12",
-      "ingredientes": "sdaaaaaaaaaaa",
-      "procesoDePreparacion": "sdasdasdasdasdasdasdasdasdasdasdasdasda",
-      "id": 6
-    },
-    {
       "nombreProducto": "sdaaqaaaaaaa",
-      "imagen": "sdaaaaa",
+      "imagen": "https://cdn7.kiwilimon.com/ss_secreto/4727/640x426/4727.jpg.webp",
       "cantidadPlatos": "12",
       "ingredientes": "sdaaaaaaaaaaa",
       "procesoDePreparacion": "sdasdasdasdasdasdasdasdasdasdasdasdasda",
@@ -54,7 +38,15 @@
       "id": 1,
       "nombreUsuario": "admin",
       "email": "admin@rollingcode.com",
-      "password": "Aa123456789*"
+      "password": "Aa123456789*",
+      "tipo": "admin"
+    },
+    {
+      "id": 2,
+      "nombreUsuario": "usuario",
+      "email": "usuario@rollingcode.com",
+      "password": "Aa123456789*",
+      "tipo": "usuario"
     }
   ]
 }
