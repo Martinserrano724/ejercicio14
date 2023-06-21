@@ -1,34 +1,89 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { eliminarProductoSeccionStorage, obtenerProductos } from '../../helpers/queries';
+const ItemProducto = ({producto,setProductos}) => {
 
-const ItemProducto = () => {
+  const borrarProducto = (producto)=>{
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    
+    swalWithBootstrapButtons.fire({
+      title: `¿esta seguro de eliminar la receta: ${producto.nombreProducto}?`,
+      text: "no se puede revertir este paso",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'si',
+      cancelButtonText: 'No, cancelar!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+       //aqui realizo la peticion delete
+       eliminarProductoSeccionStorage(producto.id).then((result)=>{
+        if(result.status === 200){
+          swalWithBootstrapButtons.fire(
+            'Borrado !',
+            `Receta ${producto.nombreProducto}  borrada correctamente.`, 
+           'success'
+         );
+         //se actualiza el state para recargar los productos
+         obtenerProductos().then((result)=>setProductos(result))
+
+        }
+        else{
+          swalWithBootstrapButtons.fire(
+            'ERROR !',
+               `Intente nueva mente`, 
+           'error'
+         )
+        }
+       })
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          `No se elimino la receta: ${producto.nombreProducto} :)`,
+          'error'
+        )
+      }
+    })
+  }
+
+
     return (
       <tr>
-      <td>1</td>
-      <td>Pulpo a la plancha</td>
-      <td>3</td>
+      <td>{producto.id}</td>
+      <td>{producto.nombreProducto}</td>
+      <td>{producto.cantidadPlatos}</td>
       <td>
         <img
-          src="https://i.blogs.es/f0476b/pulpo-a-la-plancha-pakus-futurobloguero/1366_2000.jpg"
+          src={producto.imagen}
           alt=""
           className="imgAdministrador"
         />
       </td>
       <td>
-        Pulpo cocido 3 tentáculos o patas Puré de patatas al gusto Dientes
-        de ajo para la ajada 2 Pimentón dulce para la ajada Aceite de
-        oliva virgen extra para la ajada, 4 cucharadas soperas Sal en
-        escamas para servir
+        {producto.ingredientes}
       </td>
       <td>
         <div>
           {" "}
-          <Button variant="warning" className="ms-auto btnAgregar">
+          <Link className="ms-auto btnAgregar btn btn-warning" to={`/administrador/editar/${producto.id}`}>
             Editar
-          </Button>{" "}
+          </Link>
         </div>
         <div>
           {" "}
-          <Button variant="danger" className="ms-auto btnAgregar">
+          <Button variant="danger" className="ms-auto btnAgregar" onClick={()=>borrarProducto(producto)}>
             Borrar
           </Button>{" "}
         </div>
