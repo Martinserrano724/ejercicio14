@@ -1,7 +1,7 @@
 {
   "productos": [
     {
-      "nombreProducto": "sda",
+      "nombreProducto": "55",
       "imagen": "sdaaaaa",
       "cantidadPlatos": "12",
       "ingredientes": "sdaaaaaaaaaaa",
@@ -17,7 +17,7 @@
       "id": 6
     },
     {
-      "nombreProducto": "sda",
+      "nombreProducto": "sdaaqaaaaaaa",
       "imagen": "sdaaaaa",
       "cantidadPlatos": "12",
       "ingredientes": "sdaaaaaaaaaaa",
@@ -39,6 +39,14 @@
       "ingredientes": "sadddddddsa",
       "procesoDePreparacion": "asdasdasdasdasdasd",
       "id": 9
+    },
+    {
+      "nombreProducto": "1111",
+      "imagen": "sdaaaaa",
+      "cantidadPlatos": "12",
+      "ingredientes": "sdaaaaaaaaaaa",
+      "procesoDePreparacion": "sdasdasdasdasdasdasdasdasdasdasdasdasda",
+      "id": 10
     }
   ],
   "usario": [

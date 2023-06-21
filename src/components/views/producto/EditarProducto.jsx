@@ -3,9 +3,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/esm/Button";
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { obtenerProductosEditar } from '../../helpers/queries';
+import { consultaEditarProducto, obtenerProductosEditar } from '../../helpers/queries';
 import { useParams } from 'react-router-dom';
-
+import Swal from 'sweetalert2';
+import { useNavigate } from "react-router-dom";
 const EditarProducto = () => {
   const {id}=useParams();
   //useParams se encarga de conseguir los parametros del link
@@ -17,22 +18,7 @@ const {
   setValue
 }=useForm();
 
-/*
-useEffect(()=>{
-  obtenerProductosEditar(id).then((respuesta)=>{
-    console.log('respuesta:  '+respuesta)
-
-    
-      setValue('nombreProducto',respuesta.nombreProducto);
-      setValue('imagen',respuesta.imagen);
-      setValue('ingredientes',respuesta.ingredientes);
-      setValue('cantidadPlatos',respuesta.cantidadPlatos);
-      setValue('cantidadPlatos',respuesta.cantidadPlatos);
-      setValue('procesoDePreparacion',respuesta.procesoDePreparacion);
-    
-  });
-
-},[]);*/
+const navegacion = useNavigate();
 useEffect(() => {
   obtenerProductosEditar(id).then((respuesta) => {
     console.log(respuesta)
@@ -44,11 +30,31 @@ useEffect(() => {
     setValue('procesoDePreparacion',respuesta.procesoDePreparacion);
     });
   }, []);
+
+const onSubmit=(productoEditado)=>{
+  console.log(productoEditado);
+  consultaEditarProducto(productoEditado,id).then((result)=>{
+    if(result.status === 200 && result){
+      Swal.fire(
+        "Receta Editada !",
+        `la Receta ${productoEditado.nombreProducto}  se edito correctamente.`,
+        "success"
+      );
+      navegacion('/administrador');
+    } else {
+      Swal.fire(
+        "ERROR !",
+        `Intente nueva mente`,
+        "error"
+      );}
+  });
+}
+
     return (
         <div className="container ">
         <h1 className="text-center">Editar Producto</h1>
         <hr />
-      <Form className="bgForm m-3 p-3">
+      <Form className="bgForm m-3 p-3" onSubmit={handleSubmit(onSubmit)}>
       <Form.Group className="mb-3" controlId="">
           <Form.Label>Nombre Receta</Form.Label>
 
