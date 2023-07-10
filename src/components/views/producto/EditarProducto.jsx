@@ -24,10 +24,9 @@ useEffect(() => {
   obtenerProductosEditar(id).then((respuesta) => {
     setValue('nombreProducto',respuesta.nombreProducto);
     setValue('imagen',respuesta.imagen);
-    setValue('ingredientes',respuesta.ingredientes);
+    setValue('ingredientes',respuesta.ingrediente);
     setValue('cantidadPlatos',respuesta.cantidadPlatos);
-    setValue('cantidadPlatos',respuesta.cantidadPlatos);
-    setValue('procesoDePreparacion',respuesta.procesoDePreparacion);
+    setValue('procesoDePreparacion',respuesta.procesoPreracion);
     });
   }, []);
 

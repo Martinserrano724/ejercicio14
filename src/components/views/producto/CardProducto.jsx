@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
 
 const CardProducto = ({ receta }) => {
+  
   return (
 
 
@@ -16,7 +17,7 @@ const CardProducto = ({ receta }) => {
             <Card.Body className=" ">
               <Card.Title>{receta.nombreProducto}</Card.Title>
               <Card.Text className="">{receta.procesoDePreparacion}</Card.Text>
-              <Link className="btn btn-primary" to={`/detalle/${receta.id}`}>
+              <Link className="btn btn-primary" to={`/detalle/${receta._id}`}>
                 Ver mas
               </Link>
             </Card.Body>

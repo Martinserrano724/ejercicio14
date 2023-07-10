@@ -20,9 +20,9 @@ const [platos ,setPlatos]=useState('');
       console.log(respuesta)
       setNombre(respuesta.nombreProducto);
       setImagen(respuesta.imagen);
-      setIngredientes(respuesta.ingredientes);
+      setIngredientes(respuesta.ingrediente);
       setPlatos(respuesta.cantidadPlatos);
-      setProceso(respuesta.procesoDePreparacion);
+      setProceso(respuesta.procesoPreracion);
       });
     }, []);
 
