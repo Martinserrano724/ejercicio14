@@ -71,19 +71,18 @@ export const eliminarProductoSeccionStorage = async (id) => {
   }
 };
 export const cosultarCrearProducto = async (producto) => {
-  try {
-    const respuesta = await fetch(URL_PRODUCTO, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(producto),
+  try{
+    const respuesta = await fetch(URL_Producto, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(producto)
     });
     return respuesta;
-  } catch (error) {
+}catch (error){
     console.log(error);
-    return null;
-  }
+}
 };
 export const obtenerProductosEditar = async (id) => {
   try {

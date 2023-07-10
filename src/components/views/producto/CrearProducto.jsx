@@ -13,6 +13,7 @@ const CrearProducto = () => {
   } = useForm();
   const onSubmit = (productoNuevo) => {
     cosultarCrearProducto(productoNuevo).then((respuesta) => {
+      console.log(respuesta.status);
       if (respuesta.status == 201) {
         Swal.fire(
           "Receta Creada !",

@@ -26,7 +26,7 @@ const ItemProducto = ({producto,setProductos}) => {
       if (result.isConfirmed) {
         
        //aqui realizo la peticion delete
-       eliminarProductoSeccionStorage(producto.id).then((result)=>{
+       eliminarProductoSeccionStorage(producto._id).then((result)=>{
         if(result.status === 200){
           swalWithBootstrapButtons.fire(
             'Borrado !',
@@ -61,7 +61,7 @@ const ItemProducto = ({producto,setProductos}) => {
 
     return (
       <tr className='mainContenedor'>
-      <td>{producto.id}</td>
+      <td>{producto._id}</td>
       <td>{producto.nombreProducto}</td>
       <td>{producto.cantidadPlatos}</td>
       <td>
@@ -72,12 +72,12 @@ const ItemProducto = ({producto,setProductos}) => {
         />
       </td>
       <td>
-        {producto.ingredientes}
+        {producto.ingrediente}
       </td>
       <td>
         <div>
           {" "}
-          <Link className="ms-auto btnAgregar btn btn-warning" to={`/administrador/editar/${producto.id}`}>
+          <Link className="ms-auto btnAgregar btn btn-warning" to={`/administrador/editar/${producto._id}`}>
             Editar
           </Link>
         </div>
